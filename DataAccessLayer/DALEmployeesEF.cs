@@ -14,7 +14,7 @@ namespace DataAccessLayer
             using (Model.PracticoEntities en = new Model.PracticoEntities())
             {
                 Model.Employee empNuevo;
-                if (emp.GetType() == typeof(Shared.Entities.FullTimeEmployee))
+                if (emp.GetType() == typeof(FullTimeEmployee))
                 {
                     FullTimeEmployee empFT = (FullTimeEmployee)emp;
                     empNuevo = new Model.FullTimeEmployee()
@@ -103,7 +103,6 @@ namespace DataAccessLayer
                     {
                         Model.FullTimeEmployee empFT = new Model.FullTimeEmployee();
                         empFT = (Model.FullTimeEmployee)emp;
-
                         FullTimeEmployee empleado = new FullTimeEmployee()
                         {
                              Id = empFT.EmployeeId,
