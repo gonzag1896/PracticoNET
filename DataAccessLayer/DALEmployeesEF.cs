@@ -62,7 +62,7 @@ namespace DataAccessLayer
         {
             using (Model.PracticoEntities en = new Model.PracticoEntities())
             {
-                if (emp.GetType() == typeof(Shared.Entities.FullTimeEmployee))
+                if (emp.GetType() == typeof(FullTimeEmployee))
                 {
                     FullTimeEmployee FullTimeEmp = (FullTimeEmployee)emp;
                     Model.Employee e = en.EmployeeTPH.Find(emp.Id);
@@ -90,7 +90,6 @@ namespace DataAccessLayer
                 }
             }
         }
-
         public List<Employee> GetAllEmployees()
         {
             List<Employee> result = new List<Employee>();
@@ -99,7 +98,7 @@ namespace DataAccessLayer
             {
                 en.EmployeeTPH.ToList().ForEach(emp =>
                 {
-                    if (emp.GetType().Name == "FullTimeEmployee")
+                    if (emp.GetType() == typeof(FullTimeEmployee))
                     {
                         Model.FullTimeEmployee empFT = new Model.FullTimeEmployee();
                         empFT = (Model.FullTimeEmployee)emp;
@@ -130,7 +129,6 @@ namespace DataAccessLayer
             }
             return result;
         }
-
         public Employee GetEmployee(int id)
         {
             using (Model.PracticoEntities en = new Model.PracticoEntities())
