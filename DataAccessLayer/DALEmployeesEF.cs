@@ -40,7 +40,6 @@ namespace DataAccessLayer
                     en.EmployeeTPH.Add(empNuevo);
                     en.SaveChanges();
                 }
-
             }
         }
 
@@ -100,30 +99,30 @@ namespace DataAccessLayer
                 {
                     if (emp.GetType() == typeof(FullTimeEmployee))
                     {
-                        Model.FullTimeEmployee empFT = new Model.FullTimeEmployee();
-                        empFT = (Model.FullTimeEmployee)emp;
-                        FullTimeEmployee empleado = new FullTimeEmployee()
+                        Model.FullTimeEmployee empFT = (Model.FullTimeEmployee)emp;
+                        empFT = new Model.FullTimeEmployee();
+                        FullTimeEmployee empleadoFT = new FullTimeEmployee()
                         {
                              Id = empFT.EmployeeId,
                              Name = empFT.Name,
                              StartDate = empFT.StartDate,
                              Salary = empFT.Salary,
                         };
-                        result.Add(empleado);
+                        result.Add(empleadoFT);
                     }
                      else
                      {
-                         Model.PartTimeEmployee empPT = new Model.PartTimeEmployee();
-                         empPT = (Model.PartTimeEmployee)emp;
+                        Model.PartTimeEmployee empPT = (Model.PartTimeEmployee)emp;
+                        empPT = new Model.PartTimeEmployee();
 
-                         PartTimeEmployee empleado = new PartTimeEmployee()
+                         PartTimeEmployee empleadoPT = new PartTimeEmployee()
                          {
                              Id = empPT.EmployeeId,
                              Name = empPT.Name,
                              StartDate = empPT.StartDate,
                              HourlyRate = empPT.HourlyRate,
                          };
-                         result.Add(empleado);
+                         result.Add(empleadoPT);
                      }
                  });
             }

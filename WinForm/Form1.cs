@@ -63,12 +63,6 @@ namespace WinForm
             DataAccessLayer.DALEmployeesEF dalef = new DataAccessLayer.DALEmployeesEF();
             BusinessLogicLayer.BLEmployees bl = new BusinessLogicLayer.BLEmployees(dalef);
         }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dataGridView1.DataSource = this.practicoObligatorioDataSet.EmployeesTPH;
-        }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             DataAccessLayer.DALEmployeesEF dalef = new DataAccessLayer.DALEmployeesEF();
@@ -87,9 +81,9 @@ namespace WinForm
             {
                 Shared.Entities.PartTimeEmployee empPT = new Shared.Entities.PartTimeEmployee()
                 {
-                    Name = textBox1.ToString(),
-                    HourlyRate = Convert.ToDouble(textBox3.Text),
-                    StartDate = Convert.ToDateTime(textBox5.Text)
+                    Name = textBox1.Text,
+                    StartDate = Convert.ToDateTime(textBox5.Text),
+                    HourlyRate = Convert.ToDouble(textBox3.Text)
                 };
                 bl.AddEmployee(empPT);
             }

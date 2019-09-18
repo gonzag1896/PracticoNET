@@ -95,16 +95,6 @@
             this.label2.Text = "LISTA DE EMPLEADOS\r\n";
             // 
             // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.practicoObligatorioDataSet;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 139);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(25, 172);

@@ -9,6 +9,10 @@ using System.Threading.Tasks;
 
 namespace ServiceLayer
 {
+    //ServiceContract;
+
+    //OperationContract;
+
     public interface IServiceEmployees
     {
         void AddEmployee(Employee emp);
@@ -22,5 +26,7 @@ namespace ServiceLayer
         Employee GetEmployee(int id);
 
         double CalcPartTimeEmployeeSalary(int idEmployee, int hours);
+
+        
     }
 }
